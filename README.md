@@ -41,15 +41,16 @@ Things you may want to cover:
 
 |Column   |Type   |Options                       |
 |---------|-------|------------------------------|
-|groupname|text   |null: false, foreign_key: true|
+|groupname|text   |null: false                   |
 |user_id  |integer|null: false, foreign_key: true|
-|group_id |integer|null: false, foreign_key: true|
+|group_id |integer|null: false                   |
 
 ### Association
 - belongs_to :users
+- has_many   :messages
 
 
-## messageテーブル
+## messagesテーブル
 
 |Column   |Type   |Options                       |
 |---------|-------|------------------------------|
