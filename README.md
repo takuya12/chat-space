@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+|Column   |Type   |Options                       |
+|---------|-------|------------------------------|
+|nickname |text   |null: false, foreign_key: true|
+|email    |text   |null: false, foreign_key: true|
+|user_id  |integer|null: false, foreign_key: true|
+|group_id |integer|null: false, foreign_key: true|
