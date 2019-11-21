@@ -33,11 +33,11 @@ Things you may want to cover:
 |group_id |integer|null: false|
 
 ### Association
-- has_many :tweets
+- has_many :groups
 - has_many :massages
 
 
-## groups_usersテーブル
+## groupsテーブル
 
 |Column   |Type   |Options                       |
 |---------|-------|------------------------------|
