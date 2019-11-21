@@ -54,7 +54,7 @@ Things you may want to cover:
 
 |Column   |Type   |Options                       |
 |---------|-------|------------------------------|
-|text     |text   |null: false, foreign_key: true|
+|text     |text   |null: false                   |
 |image    |integer|                              |
 |group_id |integer|null: false, foreign_key: true|
 |user_id  |integer|null: false, foreign_key: true|
