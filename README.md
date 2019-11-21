@@ -25,12 +25,12 @@ Things you may want to cover:
 
 ## usersテーブル
 
-|Column   |Type   |Options                       |
-|---------|-------|------------------------------|
-|nickname |text   |null: false, foreign_key: true|
-|email    |text   |null: false, foreign_key: true|
-|user_id  |integer|null: false, foreign_key: true|
-|group_id |integer|null: false, foreign_key: true|
+|Column   |Type   |Options    |
+|---------|-------|-----------|
+|nickname |text   |null: false|
+|email    |text   |null: false|
+|user_id  |integer|null: false|
+|group_id |integer|null: false|
 
 
 ## groups_usersテーブル
