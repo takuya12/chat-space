@@ -29,6 +29,7 @@ Things you may want to cover:
 |---------|-------|-----------|
 |nickname |text   |null: false|
 |email    |text   |null: false|
+|password |text   |null: false|
 |user_id  |integer|null: false|
 |group_id |integer|null: false|
 
