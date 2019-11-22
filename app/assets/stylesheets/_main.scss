@@ -3,7 +3,9 @@
   margin-left: 300px;
   // width: 100%;
   width: calc(100vw - 300px);
-  background-color: blue;
+  background-color: #fafafa;
+  // text-decoration: none;
+  font-weight: normal;
 
   &__header {
     display: flex;
@@ -29,13 +31,6 @@
         display: flex;
         font-size: 12px;
         color: #999999;
-        &{
-          li {
-            display: list-item;
-            text-align: -webkit-match-parent;
-          }
-        }
-
       }
     }
 
@@ -51,24 +46,90 @@
       
     }
   }
-    // &__icon{
-    //   display: flex;
-    //   justify-content: space-between;
-    //   &--edit{
-    //     color: white;
-    //   }     
-    // }
-  
+  &__chat{
+    margin: 46px 0 0 40px;
+    height: calc(100vh - 276px);
+    width:300px;
+    padding-bottom: 40px;
+    font-weight: normal;
+    
+    
+    &__info{
+      display: flex;
+      margin-bottom: 10px;
+      &--talker{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &--date{
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    &__text{
+      font-size: 14px;
+      color: #434A54;
+    }  
+  }
+  .form{
+    
+    height: 90px;
+    width: calc(100vw - 300px);
+    
+    background-color: #ddd;
+    // position: absolute;
+      // bottom: 0;
+    &__new_message{
+      padding: 20px 40px;
+      display: flex;
+
+      &__input{
+        
+        width: 100%;
+        position: relative;
+          // left: 40px;
+        // padding: 0 40px 0 10px;
+        // margin: auto 0;
+        // cursor: pointer;
+        .holder{
+          width: 100%;
+          height: 50px;
+          padding: auto 0;
+          // margin-left: 10px;
+          // position: relative;
+        }
+        .input__image{
+          // font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+        .input__file{
+          display: none;
+          height: 10px;
+          widows: 10px;
+          
+        }
+        .input__icon{
+          // display: inline-block;
+          // font: normal normal normal 14px/1 FontAwesome;
+          // font-size: inherit;
+          // text-rendering: auto;
+          // -webkit-font-smoothing: antialiased;
+        }        
+      }
+      &__submit{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.cont {
-  height: calc(100vh - 100px);
-  width:300px;
-  &__chat{
-    padding: 40px;
-    color: pink;
-    font-size:30px;
-    text-align: center;
-  }
- 
-}
