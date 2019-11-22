@@ -3,14 +3,15 @@
     .side__header__logo
       seo
     .side__header__icon
-      =link_to "#", class: "header__btn header__btn--edit" do
-        = icon('fas', 'edit',  class: "header__btn--icon")
-        %span<>
-      =link_to "#", class: "header__btn header__btn--cog" do
-        = icon('fas', 'cog',  class: "header__btn--icon")
-        %span<>
+      =link_to "#", class: "header__icon header__icon--edit" do
+        = icon('fas', 'edit',  class: "side__header__icon--btn")
+        -# %span<>
+      =link_to "#", class: "header__icon header__icon--cog" do
+        = icon('fas', 'cog',  class: "side__header__icon--btn")
+        -# %span<>
   .contents
+    .contents__group
+      follow me
     .contents__message
-      follow me!
       Twitter
-      Instagram
+  
