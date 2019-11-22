@@ -1,0 +1,40 @@
+
+.main {
+  margin-left: 300px;
+  width: 100%;
+  // width: calc(100vh - 300px);
+  background-color: blue;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: red;
+    text-align: center;
+    font-size: 16px;
+    line-height: 90px;
+    align-items: center;
+    padding: 0 20px;
+    &__logo {
+
+    }
+    &__icon{
+      display: flex;
+      justify-content: space-between;
+
+       
+    }
+  }
+}
+
+.cont {
+  height: calc(100vh - 100px);
+  width:300px;
+  &__chat{
+    padding: 40px;
+    color: pink;
+    font-size:30px;
+    text-align: center;
+  }
+ 
+}

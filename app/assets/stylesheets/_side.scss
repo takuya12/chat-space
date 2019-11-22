@@ -1,0 +1,62 @@
+.side {
+  width: 300px;
+  color: #ffffff;
+  float: left;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #253141;
+    text-align: center;
+    font-size: 16px;
+    line-height: 90px;
+    align-items: center;
+    padding: 0 20px;
+    &__logo {
+
+    }
+    &__icon{
+      display: flex;
+      justify-content: space-between;
+
+       
+    }
+  }
+}
+
+.contents {
+  height: calc(100vh - 100px);
+  width:300px;
+  background-color: #2f3e51;
+  &__message{
+    padding: 40px;
+    color:#ffa500;
+    font-size:30px;
+    text-align: center;
+  }
+  &__btn{
+    display: block;
+    height: 80px;
+    width :360px;
+    margin:0 auto 50px;
+    border-radius: 10px;
+    font-size:20px;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    &--icon{
+      padding-right:20px;
+    }
+    &--facebook{
+      background-color: #4169e1;
+    }
+    &--twitter{
+      background-color: #00bfff;
+    }
+    &--instagram{
+      background-color: #fc76bf;
+    }
+  }
+}
