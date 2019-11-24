@@ -57,6 +57,7 @@
     &__info{
       display: flex;
       margin-bottom: 10px;
+     
       &--talker{
         font-size: 16px;
         font-weight: bold;
@@ -96,23 +97,27 @@
           width: 100%;
           height: 50px;
           padding: auto 0;
+          
           // margin-left: 10px;
           // position: relative;
         }
         .input__image{
           // font-size: 1.3rem;
           position: absolute;
-          top: 10px;
-          right: 10px;
+          top: 14px;
+          right: 14px;
           cursor: pointer;
         }
         .input__file{
           display: none;
-          height: 10px;
-          widows: 10px;
+          // height: 14px;
+          // width: 14px;
           
         }
         .input__icon{
+          // height: 14px;
+          // width: 14px;
+
           // display: inline-block;
           // font: normal normal normal 14px/1 FontAwesome;
           // font-size: inherit;
@@ -121,13 +126,17 @@
         }        
       }
       &__submit{
-        width: 100px;
+        width: 60px;
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
         background-color: #38aef0;
         color: white;
         cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        line-height: 50px;
+        // align-items: center;
       }
     }
   }
