@@ -17,6 +17,7 @@
       font-weight: bold;
     }
     &__icon{
+      font-weight: normal;
       &--btn{
         color: #ffffff;
       }
@@ -27,20 +28,16 @@
 .contents {
   height: calc(100vh - 100px);
   padding-left: 20px;
-  // width:300px;
   background-color: #2f3e51;
   &__group{
     padding: 20px 0 5px 0;
     color:white;
     font-size:15px;
-    // text-align: center;
-    font-weight: bold;
+    font-weight: normal;
   }
   &__message{
     padding: 0 0 40px 0;
     color:white;
-    font-size:11px;
-    // text-align: center;
-    font-weight: bold;  
+    font-size:11px;  
   }
 }
