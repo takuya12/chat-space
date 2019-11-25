@@ -1,10 +1,8 @@
 
 .main {
   margin-left: 300px;
-  // width: 100%;
   width: calc(100vw - 300px);
   background-color: #fafafa;
-  // text-decoration: none;
   font-weight: normal;
 
   &__header {
@@ -12,10 +10,6 @@
     justify-content: space-between;
     height: 100px;
     background-color: white;
-    // text-align: center;
-    // font-size: 16px;
-    // line-height: 90px;
-    // align-items: center;
     padding: 0 40px;
     overflow: scroll;
     overflow-x: scroll;
@@ -41,9 +35,6 @@
       margin-top: 28px;
       border: solid 1px #38aef0;
       color: #38aef0;
-      // position: absolute;
-      // right: 40px;
-      
     }
   }
   &__chat{
@@ -52,8 +43,7 @@
     width:300px;
     padding-bottom: 40px;
     font-weight: normal;
-    
-    
+  
     &__info{
       display: flex;
       margin-bottom: 10px;
@@ -73,57 +63,32 @@
       color: #434A54;
     }  
   }
-  .form{
-    
+  .form{  
     height: 90px;
     width: calc(100vw - 300px);
-    
     background-color: #ddd;
-    // position: absolute;
-      // bottom: 0;
+
     &__new_message{
       padding: 20px 40px;
       display: flex;
 
-      &__input{
-        
+      &__input{    
         width: 100%;
         position: relative;
-          // left: 40px;
-        // padding: 0 40px 0 10px;
-        // margin: auto 0;
-        // cursor: pointer;
+        
         .holder{
           width: 100%;
           height: 50px;
-          // padding: auto 0;
-          
-          // margin-left: 10px;
-          // position: relative;
         }
         .input__image{
-          // font-size: 1.3rem;
           position: absolute;
           top: 14px;
           right: 14px;
           cursor: pointer;
         }
         .input__file{
-          display: none;
-          // height: 14px;
-          // width: 14px;
-          
+          display: none;          
         }
-        .input__icon{
-          // height: 14px;
-          // width: 14px;
-
-          // display: inline-block;
-          // font: normal normal normal 14px/1 FontAwesome;
-          // font-size: inherit;
-          // text-rendering: auto;
-          // -webkit-font-smoothing: antialiased;
-        }        
       }
       &__submit{
         width: 60px;
@@ -136,7 +101,6 @@
         text-align: center;
         font-size: 16px;
         line-height: 50px;
-        // align-items: center;
       }
     }
   }
