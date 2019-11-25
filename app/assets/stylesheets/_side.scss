@@ -1,0 +1,43 @@
+.side {
+  width: 300px;
+  color: #ffffff;
+  float: left;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #253141;
+    text-align: center;
+    font-size: 16px;
+    line-height: 90px;
+    align-items: center;
+    padding: 0 20px;
+    &__logo {
+      font-weight: bold;
+    }
+    &__icon{
+      font-weight: normal;
+      &--btn{
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.contents {
+  height: calc(100vh - 100px);
+  padding-left: 20px;
+  background-color: #2f3e51;
+  &__group{
+    padding: 20px 0 5px 0;
+    color:white;
+    font-size:15px;
+    font-weight: normal;
+  }
+  &__message{
+    padding: 0 0 40px 0;
+    color:white;
+    font-size:11px;  
+  }
+}

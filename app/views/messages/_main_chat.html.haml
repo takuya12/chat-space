@@ -1,0 +1,29 @@
+.main
+  .main__header
+    .main__header__group
+      .main__header__group--name
+        name
+      .main__header__group--member
+        Member :
+        %span 1
+    .main__header__edit
+      Edit
+  .main__chat
+    .main__chat__info
+      .main__chat__info--talker
+        aaaa
+      .main__chat__info--date
+        20189
+    .main__chat__text
+      dasdaaa
+
+  .form
+    .form__new_message
+      .form__new_message__input
+        %input.input_text{class: "holder",name: "message", placeholder: "  type a message", type: "text", value: ""}/
+        %label{class: "input__image"}
+          = icon('fas', 'image' , class: "input__icon")
+          %input{type: "file" , class: "input__file"}
+      .form__new_message__submit
+        Send
+
