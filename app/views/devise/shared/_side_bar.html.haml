@@ -3,9 +3,9 @@
     .side__header__logo
       = current_user.name
     .side__header__icon
-      =link_to "#", class: "header__icon header__icon--edit" do
+      =link_to new_group_path, class: "header__icon header__icon--edit" do
         = icon('fas', 'edit',  class: "side__header__icon--btn")
-      =link_to "edit_user_path(current_user)", class: "header__icon header__icon--cog" do
+      =link_to edit_user_path(current_user), class: "header__icon header__icon--cog" do
         = icon('fas', 'cog',  class: "side__header__icon--btn")
   .contents
     .contents__group
