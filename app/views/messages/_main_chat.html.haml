@@ -18,12 +18,21 @@
       dasdaaa
 
   .form
-    .form__new_message
-      .form__new_message__input
-        %input.input_text{class: "holder",name: "message", placeholder: "  type a message", type: "text", value: ""}/
-        %label{class: "input__image"}
-          = icon('fas', 'image' , class: "input__icon")
-          %input{type: "file" , class: "input__file"}
-      .form__new_message__submit
-        Send
+    = form_for [@group, @message] do |f|
+      .form__new_message
+        .form__new_message__input
+          = f.text_field :content, class: 'holder', placeholder: 'type a message'
+          = f.label :image, class: 'input__image' do
+            = icon('fas', 'image' , class: "input__icon")
+            = f.file_field :image, class: 'input__file'
+        = f.submit 'Send', class: '.form__new_message__submit'
 
+  -# .form
+  -#   .form__new_message
+  -#     .form__new_message__input
+  -#       %input.input_text{class: "holder",name: "message", placeholder: "  type a message", type: "text", value: ""}/
+  -#       %label{class: "input__image"}
+  -#         = icon('fas', 'image' , class: "input__icon")
+  -#         %input{type: "file" , class: "input__file"}
+  -#     .form__new_message__submit
+  -#       Send
