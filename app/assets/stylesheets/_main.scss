@@ -40,9 +40,12 @@
   &__chat{
     margin: 46px 0 0 40px;
     height: calc(100vh - 276px);
-    width:300px;
+    // width:300px;
     padding-bottom: 40px;
     font-weight: normal;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: scroll;
   
     &__info{
       display: flex;

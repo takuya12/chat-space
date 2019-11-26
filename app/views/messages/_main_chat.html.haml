@@ -2,20 +2,19 @@
   .main__header
     .main__header__group
       .main__header__group--name
-        name
+        = @group.name
       .main__header__group--member
         Member :
-        %span 1
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+
     .main__header__edit
-      Edit
+      = link_to "Edit", edit_group_path(@group)
+  
+      -# = link_to "Edit", edit_group_path(params[:group_id]), method: :get 
+  
   .main__chat
-    .main__chat__info
-      .main__chat__info--talker
-        aaaa
-      .main__chat__info--date
-        20189
-    .main__chat__text
-      dasdaaa
+    = render @messages
 
   .form
     = form_for [@group, @message] do |f|
