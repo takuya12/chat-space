@@ -2,28 +2,36 @@
   .main__header
     .main__header__group
       .main__header__group--name
-        name
+        = @group.name
       .main__header__group--member
         Member :
-        %span 1
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+
     .main__header__edit
-      Edit
+      = link_to "Edit", edit_group_path(@group)
+  
+      -# = link_to "Edit", edit_group_path(params[:group_id]), method: :get 
+  
   .main__chat
-    .main__chat__info
-      .main__chat__info--talker
-        aaaa
-      .main__chat__info--date
-        20189
-    .main__chat__text
-      dasdaaa
+    = render @messages
 
   .form
-    .form__new_message
-      .form__new_message__input
-        %input.input_text{class: "holder",name: "message", placeholder: "  type a message", type: "text", value: ""}/
-        %label{class: "input__image"}
-          = icon('fas', 'image' , class: "input__icon")
-          %input{type: "file" , class: "input__file"}
-      .form__new_message__submit
-        Send
+    = form_for [@group, @message] do |f|
+      .form__new_message
+        .form__new_message__input
+          = f.text_field :content, class: 'holder', placeholder: 'type a message'
+          = f.label :image, class: 'input__image' do
+            = icon('fas', 'image' , class: "input__icon")
+            = f.file_field :image, class: 'input__file'
+        = f.submit 'Send', class: '.form__new_message__submit'
 
+  -# .form
+  -#   .form__new_message
+  -#     .form__new_message__input
+  -#       %input.input_text{class: "holder",name: "message", placeholder: "  type a message", type: "text", value: ""}/
+  -#       %label{class: "input__image"}
+  -#         = icon('fas', 'image' , class: "input__icon")
+  -#         %input{type: "file" , class: "input__file"}
+  -#     .form__new_message__submit
+  -#       Send
