@@ -25,11 +25,11 @@
   }
 }
 
-.contents {
+.group {
   height: calc(100vh - 100px);
   padding-left: 20px;
   background-color: #2f3e51;
-  &__group{
+  &__name{
     padding: 20px 0 5px 0;
     color:white;
     font-size:15px;

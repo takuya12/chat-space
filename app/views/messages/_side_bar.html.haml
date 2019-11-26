@@ -7,9 +7,12 @@
         = icon('fas', 'edit',  class: "side__header__icon--btn")
       =link_to edit_user_path(current_user), class: "header__icon header__icon--cog" do
         = icon('fas', 'cog',  class: "side__header__icon--btn")
-  .contents
-    .contents__group
-      follow me
-    .contents__message
-      Twitter
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
   
