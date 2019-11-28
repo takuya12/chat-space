@@ -24,7 +24,8 @@
           = f.label :image, class: 'input__image' do
             = icon('fas', 'image' , class: "input__icon")
             = f.file_field :image, class: 'input__file'
-        = f.submit 'Send', class: '.form__new_message__submit'
+        .form__new_message__submit
+          = f.submit 'Send', class: '.form__new_message__submit'
 
   -# .form
   -#   .form__new_message
