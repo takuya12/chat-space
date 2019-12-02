@@ -1,8 +1,5 @@
-json.array! @messafes do |message|
-  json.id message.id
-  json.text message.text
-  json.image message.image
-  json.user_id message.user_id
-  json.nickname message.user.nickname
-  json.user_sign_in current_user
-end
+  json.id      @message.id
+  json.content @message.content 
+  json.date    @message.created_at.strftime("%Y/%m/%d %H:%M")
+  json.user_name @message.user.name
+  json.image   @message.image.url

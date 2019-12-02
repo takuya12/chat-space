@@ -1,47 +1,51 @@
 $(function(){
+  
   function buildHTML(message){
-    if (message.image) {
-      var html =  `<p>
-                    <strong>
-                      <a href=/users/${message.user_id}>${message.user_name}</a>
-                      ：
-                    </strong>
-                    ${message.text}
-                    ${message.image}
-                  </p>`
-    } else {
-      var html =  `<p>
-                    <strong>
-                      <a href=/users/${message.user_id}>${message.user_name}</a>
-                      ：
-                    </strong>
-                    ${message.text}
-                  </p>`
-    }
-    return html
+    var content = message.content ? `${ message.content }` : "";
+    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var html = `<div class="main_chat" data-id="${message.id}">
+                  <div class="main__chat__info">
+                    <p class="main__chat__info--talker">
+                      ${message.user_name}
+                    </p>
+                    <p class="main__chat__info--date">
+                      ${message.date}
+                    </p>
+                  </div>
+                  <p class="main__chat__text">
+                    <div>
+                    ${content}
+                    </div>
+                    ${img}
+                  </p>
+                </div>`
+  return html;
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax({
-      url: '/messages/create',
-      type: "GET",
-      data: formData,
+    var message = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({  
+      url: url,
+      type: 'POST',
+      data: message,
       dataType: 'json',
       processData: false,
       contentType: false
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.textbox').val('');
-      $('.form__submit').prop('disabled', false);
+      $('.main__chat').append(html);
+      $('#message_content').val('');
+      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
     })
 
-    .fail(function() {
+    .fail(function(data) {
       alert("メッセージ送信に失敗しました");
-    });
-  });
+    })
+
+    .always(function(data){
+      $('.form__new_message__submit').prop('disabled', false);
+    })
+  })
 });
