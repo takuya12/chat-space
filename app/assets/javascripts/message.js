@@ -12,7 +12,7 @@ $(function(){
                       ${message.date}
                     </p>
                   </div>
-                  <p class="main__chat__text">
+                  <div class="main__chat__text">
                     <div>
                     ${content}
                     </div>
@@ -38,6 +38,7 @@ $(function(){
       $('.main__chat').append(html);
       $('#message_content').val('');
       $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
+      $('#new_message')[0].reset();
     })
 
     .fail(function(data) {
