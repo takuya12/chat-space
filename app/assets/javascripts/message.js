@@ -1,4 +1,7 @@
 $(function(){
+
+  last_message_id = new.message(id);
+  console.log(last_message_id);
   
   function buildHTML(message){
     var content = message.content ? `${ message.content }` : "";
