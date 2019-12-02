@@ -12,12 +12,12 @@ $(function(){
                       ${message.date}
                     </p>
                   </div>
-                  <div class="main__chat__text">
+                  
                     <div>
                     ${content}
                     </div>
                     ${img}
-                  </p>
+                  
                 </div>`
   return html;
   }
