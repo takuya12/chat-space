@@ -1,29 +1,27 @@
 $(function(){
-
-  last_message_id = new.message(id);
-  console.log(last_message_id);
   
   function buildHTML(message){
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html = `<div class="main_chat" data-id="${message.id}">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="main__chat__info">
-                    <p class="main__chat__info--talker">
+                    <div class="main__chat__info--talker">
                       ${message.user_name}
-                    </p>
-                    <p class="main__chat__info--date">
-                      ${message.date}
-                    </p>
-                  </div>
-                  
-                    <div>
-                    ${content}
                     </div>
+                    <div class="main__chat__info--date">
+                      ${message.date}
+                    </div>
+                  </div>
+                  <div class="main__chat__text">
+                    <p class="lower-message__content">
+                    ${content}
+                    </p>
                     ${img}
-                  
+                  </div>
                 </div>`
-  return html;
+    return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
@@ -38,8 +36,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.main__chat').append(html);
-      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
+      $('.message').append(html);
+      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
       $('#new_message')[0].reset();
     })
 
@@ -51,4 +49,38 @@ $(function(){
       $('.form__new_message__submit').prop('disabled', false);
     })
   })
+
+  function reloadMessages () {
+    var last_message_id = $('.message:last').data("message-id");
+    var href = 'api/messages'
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+      $.ajax({
+        //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+        url: href,
+        //ルーティングで設定した通りhttpメソッドをgetに指定
+        type: 'get',
+        dataType: 'json',
+        //dataオプションでリクエストに値を含める
+        data: {id: last_message_id}
+      })
+
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML = buildHTML(message)
+          // scrollFunction();
+          $('.message').append(insertHTML);
+          $('.message').animate({scrollTop: $('.message')[0].scrollHeight}, 'fast');
+        });
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました")
+      });
+    }
+  }
+  setInterval(reloadMessages, 7000);
 });
+
+
+  
