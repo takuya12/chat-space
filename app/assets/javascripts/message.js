@@ -1,5 +1,4 @@
 $(function(){
-  
   function buildHTML(message){
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
@@ -36,8 +35,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html);
-      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
+      $('.main__chat').append(html);
+      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
       $('#new_message')[0].reset();
     })
 
@@ -54,14 +53,10 @@ $(function(){
     var last_message_id = $('.message:last').data("message-id");
     var href = 'api/messages'
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       $.ajax({
-        //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
         url: href,
-        //ルーティングで設定した通りhttpメソッドをgetに指定
         type: 'get',
         dataType: 'json',
-        //dataオプションでリクエストに値を含める
         data: {id: last_message_id}
       })
 
@@ -69,9 +64,8 @@ $(function(){
         var insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML = buildHTML(message)
-          // scrollFunction();
-          $('.message').append(insertHTML);
-          $('.message').animate({scrollTop: $('.message')[0].scrollHeight}, 'fast');
+          $('.main__chat').append(insertHTML);
+          $('.main__chat').animate({scrollTop: $('.main__chat')[0].scrollHeight}, 'fast');
         });
       })
       .fail(function() {
@@ -81,6 +75,3 @@ $(function(){
   }
   setInterval(reloadMessages, 7000);
 });
-
-
-  
